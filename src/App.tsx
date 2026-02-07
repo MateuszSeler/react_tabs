@@ -24,16 +24,12 @@ export const App: React.FC = () => {
   return (
     <div className="section">
       <h1 className="title">Selected tab is {selectedTab.title}</h1>
-
-      <div data-cy="TabsComponent">
-        <div className="tabs is-boxed">
-          <Tabs tabs={tabs} activeTab={selectedTab.id} onClick={handleClick} />
-        </div>
-
-        <div className="block" data-cy="TabContent">
-          {selectedTab.content}
-        </div>
-      </div>
+      <Tabs
+        tabs={tabs}
+        activeTab={selectedTab.id}
+        onClick={handleClick}
+        content={selectedTab.content}
+      />
     </div>
   );
 };

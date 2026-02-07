@@ -10,14 +10,14 @@ export const Tab: React.FC<Props> = ({ tab, isActive, onClick }) => {
   return (
     <li data-cy="Tab" className={isActive ? 'is-active' : ''}>
       <a
-        href={'#tab-' + tab.id}
+        href={'#' + tab.id}
         data-cy="TabLink"
         onClick={click => {
           click.preventDefault();
           onClick(tab);
         }}
       >
-        {tab.id}
+        {tab.title}
       </a>
     </li>
   );
